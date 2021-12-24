@@ -1,8 +1,12 @@
+"""
+    This is facebook, youtube, instagram videos downloader app
+
+"""
 import tkinter as tk
 from pytube import YouTube
 
 dock = tk.Tk()
-dock.geometry('600x400')
+dock.geometry('800x400')
 dock.resizable(0,0)
 dock.title("Youtube video downloader")
 tk.Label(dock, text='Youtube Video Downloader', font='arial 20 bold').pack()
