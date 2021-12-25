@@ -1,24 +1,31 @@
 """
     This is facebook, youtube, instagram videos downloader app
-
 """
+
 import tkinter as tk
+
 from pytube import YouTube
 
-dock = tk.Tk()
-dock.geometry('800x400')
-dock.resizable(0, 0)
-dock.title("Youtube video downloader")
-tk.Label(dock, text='Youtube Video Downloader', font='arial 20 bold').pack()
+root = tk.Tk()
+root.geometry('800x400')
+root.resizable(0, 0)
+root.title("Y&F&I video downloader")
+
+
+tk.Label(root,
+         text='Youtube Video Downloader',
+         anchor="w",
+         font="arial 20 italic"
+         ).pack(fill='both')
 
 link = tk.StringVar()
 
-tk.Label(dock,
+tk.Label(root,
          text="Paste Link Here: ",
-         font="arial 20 bold") \
-    .place(x=160, y=60)
+         font="arial 20 bold"
+         ).place(x=160, y=60)
 
-link_error = tk.Entry(dock,
+link_error = tk.Entry(root,
                       width=70,
                       textvariable=link) \
     .place(x=32, y=90)
@@ -29,18 +36,18 @@ def Downloader():
     url = YouTube(str(link.get()))
     video = url.streams.first()
     video.download()
-    tk.Label(dock,
+    tk.Label(root,
              text="Successfully Downloaded",
-             font="arial 15") \
-        .place(x=180, y=200)
+             font="arial 15"
+             ).place(x=180, y=200)
 
 
 # Download Button
-tk.Button(dock,
+tk.Button(root,
           text="DOWNLOAD",
           font="Verdana 15 bold",
           bg="orange", padx=2,
-          command=Downloader) \
-    .place(x=180, y=150)
+          command=Downloader
+          ).place(x=120, y=120)
 
-dock.mainloop()
+root.mainloop()
