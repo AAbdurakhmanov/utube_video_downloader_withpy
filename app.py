@@ -1,34 +1,32 @@
-"""
-    This is facebook, youtube, instagram videos downloader app
-"""
-
 import tkinter as tk
-
 from pytube import YouTube
 
 root = tk.Tk()
-root.geometry('800x400')
+root.geometry('400x400')
 root.resizable(0, 0)
 root.title("Y&F&I video downloader")
 
 
 tk.Label(root,
          text='Youtube Video Downloader',
-         anchor="w",
-         font="arial 20 italic"
+         anchor="center",
+         font="arial 20 bold"
          ).pack(fill='both')
 
 link = tk.StringVar()
 
 tk.Label(root,
          text="Paste Link Here: ",
-         font="arial 20 bold"
-         ).place(x=160, y=60)
+         anchor='w',
+         font="arial 18 italic"
+         ).pack(fill="both")
 
 link_error = tk.Entry(root,
-                      width=70,
+                      width=50,
                       textvariable=link) \
     .place(x=32, y=90)
+
+
 
 
 # Function to download the video
@@ -40,7 +38,6 @@ def Downloader():
              text="Successfully Downloaded",
              font="arial 15"
              ).place(x=180, y=200)
-
 
 # Download Button
 tk.Button(root,
